@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Challengers Bangalore - Official Fan Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --rcb-red: #EC1C24;
+            --rcb-black: #000000;
+            --rcb-gold: #FFD700;
+            --rcb-gray: #333333;
+            --rcb-light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--rcb-light-gray);
+            color: var(--rcb-gray);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--rcb-black), var(--rcb-red));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--rcb-red), var(--rcb-black));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background-color: var(--rcb-black);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--rcb-red);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--rcb-red);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: white;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--rcb-black);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--rcb-red);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            color: var(--rcb-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Match Schedule */
+        .match-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .match-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .match-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .match-header {
+            background-color: var(--rcb-black);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        
+        .team-logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--rcb-light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--rcb-red);
+        }
+        
+        .vs {
+            font-weight: 700;
+            color: var(--rcb-red);
+            font-size: 1.2rem;
+        }
+        
+        .match-info {
+            padding: 15px;
+            background-color: var(--rcb-light-gray);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .match-result {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .win {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .loss {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .upcoming {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        /* Players Section */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .player-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .player-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .player-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--rcb-red), var(--rcb-black));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+        
+        .player-info {
+            padding: 20px;
+        }
+        
+        .player-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--rcb-black);
+        }
+        
+        .player-info .role {
+            color: var(--rcb-red);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .player-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--rcb-black);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--rcb-gray);
+        }
+        
+        /* Statistics Section */
+        .stats-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        
+        .stats-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .stats-tab.active {
+            color: var(--rcb-red);
+            border-bottom-color: var(--rcb-red);
+        }
+        
+        .stats-content {
+            display: none;
+        }
+        
+        .stats-content.active {
+            display: block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background-color: var(--rcb-light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--rcb-red);
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--rcb-gray);
+        }
+        
+        /* News Section */
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .featured-news {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--rcb-black), var(--rcb-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .featured-content {
+            padding: 25px;
+        }
+        
+        .featured-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--rcb-black);
+        }
+        
+        .news-date {
+            color: var(--rcb-red);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .news-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .news-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 15px;
+        }
+        
+        .news-item-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--rcb-red), var(--rcb-black));
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .news-item-content h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Fan Engagement */
+        .engagement-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .engagement-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .engagement-icon {
+            font-size: 2.5rem;
+            color: var(--rcb-red);
+            margin-bottom: 15px;
+        }
+        
+        .engagement-card h3 {
+            margin-bottom: 15px;
+            color: var(--rcb-black);
+        }
+        
+        .poll-options {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .poll-option {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: var(--rcb-light-gray);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .poll-option:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .poll-option.selected {
+            background-color: rgba(236, 28, 36, 0.1);
+            border-left: 3px solid var(--rcb-red);
+        }
+        
+        .vote-btn {
+            background-color: var(--rcb-red);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .vote-btn:hover {
+            background-color: #c5161d;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--rcb-black), var(--rcb-gray));
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--rcb-red);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--rcb-red);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--rcb-red);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--rcb-black);
+                flex-direction: column;
+                padding: 20px 0;
+                text-align: center;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .logo-icon {
+                height: 50px;
+                width: 50px;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">RCB</div>
+                <div class="logo-text">
+                    <h1>Royal Challengers Bangalore</h1>
+                    <p>Play Bold | #PlayBold</p>
+                </div>
+            </div>
+            <nav>
+                <div class="mobile-menu">☰</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#matches">Matches</a></li>
+                    <li><a href="#players">Players</a></li>
+                    <li><a href="#stats">Statistics</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#engagement">Fan Zone</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Ee Saala Cup Namde!</h2>
+            <p>Welcome to the official fan hub of Royal Challengers Bangalore. Get the latest updates, match schedules, player stats, and exclusive content from IPL 2024.</p>
+            <a href="#matches" class="cta-button">View Upcoming Matches</a>
+        </div>
+    </section>
+
+    <!-- Match Schedule -->
+    <section id="matches">
+        <div class="container">
+            <div class="section-header">
+                <h2>Match Schedule & Results</h2>
+                <p>Stay updated with RCB's IPL 2024 fixtures and results</p>
+            </div>
+            <div class="match-cards">
+                <!-- Match 1 -->
+                <div class="match-card">
+                    <div class="match-header">IPL 2024 • Match 15</div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <div class="team-logo">RCB</div>
+                            <span>Royal Challengers</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo">CSK</div>
+                            <span>Super Kings</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <p>March 22, 2024 • 7:30 PM IST</p>
+                        <p>M. Chinnaswamy Stadium, Bengaluru</p>
+                        <div class="match-result win">RCB won by 5 wickets</div>
+                    </div>
+                </div>
+                
+                <!-- Match 2 -->
+                <div class="match-card">
+                    <div class="match-header">IPL 2024 • Match 22</div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <div class="team-logo">RCB</div>
+                            <span>Royal Challengers</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo">KKR</div>
+                            <span>Knight Riders</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <p>March 29, 2024 • 7:30 PM IST</p>
+                        <p>Eden Gardens, Kolkata</p>
+                        <div class="match-result loss">KKR won by 7 runs</div>
+                    </div>
+                </div>
+                
+                <!-- Match 3 -->
+                <div class="match-card">
+                    <div class="match-header">IPL 2024 • Match 27</div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <div class="team-logo">RCB</div>
+                            <span>Royal Challengers</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo">DC</div>
+                            <span>Delhi Capitals</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <p>April 5, 2024 • 7:30 PM IST</p>
+                        <p>M. Chinnaswamy Stadium, Bengaluru</p>
+                        <div class="match-result upcoming">Upcoming Match</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players Section -->
+    <section id="players">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Players</h2>
+                <p>Meet the stars who represent RCB in IPL 2024</p>
+            </div>
+            <div class="players-grid">
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="player-info">
+                        <h3>Virat Kohli</h3>
+                        <span class="role">Batsman</span>
+                        <p>Returning after paternity leave, Kohli has shown exceptional form in the first two matches, scoring 89* against CSK. His fitness and aggressive intent at the top have been crucial for RCB's strong start.</p>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <div class="stat-value">89*</div>
+                                <div class="stat-label">Last Innings</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">142.5</div>
+                                <div class="stat-label">Strike Rate</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2</div>
+                                <div class="stat-label">2024 Matches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="player-info">
+                        <h3>Glenn Maxwell</h3>
+                        <span class="role">All-rounder</span>
+                        <p>Maxwell has been explosive in the middle order, providing crucial cameos and taking important wickets. His 35 off 18 balls against KKR nearly turned the game in RCB's favor.</p>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <div class="stat-value">186.2</div>
+                                <div class="stat-label">Strike Rate</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Wickets</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2</div>
+                                <div class="stat-label">Catches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="player-info">
+                        <h3>Mohammed Siraj</h3>
+                        <span class="role">Bowler</span>
+                        <p>Siraj has led the bowling attack with precision, taking 5 wickets in 2 matches with an economy of 7.2. His spell of 3/28 against CSK was match-winning.</p>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Wickets</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">7.2</div>
+                                <div class="stat-label">Economy</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">3/28</div>
+                                <div class="stat-label">Best Bowling</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="player-info">
+                        <h3>Faf du Plessis</h3>
+                        <span class="role">Batsman • Captain</span>
+                        <p>The captain has led from the front with consistent performances. His tactical field placements and aggressive batting approach have been instrumental in RCB's campaign.</p>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <div class="stat-value">127</div>
+                                <div class="stat-label">Total Runs</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">138.0</div>
+                                <div class="stat-label">Strike Rate</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">1</div>
+                                <div class="stat-label">Half-century</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats">
+        <div class="container">
+            <div class="section-header">
+                <h2>Team Statistics</h2>
+                <p>RCB's IPL 2024 performance metrics and records</p>
+            </div>
+            <div class="stats-container">
+                <div class="stats-tabs">
+                    <div class="stats-tab active" data-tab="overall">Overall</div>
+                    <div class="stats-tab" data-tab="batting">Batting</div>
+                    <div class="stats-tab" data-tab="bowling">Bowling</div>
+                    <div class="stats-tab" data-tab="records">Records</div>
+                </div>
+                
+                <div class="stats-content active" id="overall">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">2</div>
+                            <div class="label">Matches Played</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">1</div>
+                            <div class="label">Matches Won</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">1</div>
+                            <div class="label">Matches Lost</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">5th</div>
+                            <div class="label">Current Position</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-content" id="batting">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">198/5</div>
+                            <div class="label">Highest Total</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">89*</div>
+                            <div class="label">Highest Score (Kohli)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">8.94</div>
+                            <div class="label">Run Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">12</div>
+                            <div class="label">Total Sixes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-content" id="bowling">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">5</div>
+                            <div class="label">Total Wickets</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">3/28</div>
+                            <div class="label">Best Figures (Siraj)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">8.2</div>
+                            <div class="label">Economy Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">2</div>
+                            <div class="label">Run-outs</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-content" id="records">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">89*</div>
+                            <div class="label">Kohli's Comeback Innings</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">35(18)</div>
+                            <div class="label">Maxwell's Quickfire</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">3/28</div>
+                            <div class="label">Siraj's Best Spell</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">72</div>
+                            <div class="label">Faf's Opening Stand</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <p>Stay updated with the latest happenings in RCB</p>
+            </div>
+            <div class="news-container">
+                <div class="featured-news">
+                    <div class="featured-image">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="featured-content">
+                        <span class="news-date">March 30, 2024</span>
+                        <h3>RCB's Middle Order Concerns After Close Loss to KKR</h3>
+                        <p>Royal Challengers Bangalore suffered a narrow 7-run defeat against Kolkata Knight Riders in a high-scoring thriller at Eden Gardens. Despite Virat Kohli's brilliant 72 and Glenn Maxwell's explosive 35, RCB fell short while chasing 198.</p>
+                        <p>Coach Andy Flower expressed concerns about the middle-order batting, stating, "We need more contributions from numbers 4-7. While Virat and Maxi are in good form, we need the entire batting unit to fire consistently." The team is expected to make strategic changes before their next match against Delhi Capitals.</p>
+                        <a href="#" class="cta-button" style="margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="news-sidebar">
+                    <div class="news-item">
+                        <div class="news-item-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="news-item-content">
+                            <h4>Virat Kohli Returns With Match-Winning 89* Against CSK</h4>
+                            <span class="news-date">March 23, 2024</span>
+                            <p>Kohli marks comeback from paternity leave with unbeaten knock, guiding RCB to victory in season opener.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-item-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="news-item-content">
+                            <h4>RCB Launches Sustainability-Focused Jersey for IPL 2024</h4>
+                            <span class="news-date">March 18, 2024</span>
+                            <p>New jersey made from recycled materials, featuring fan-designed elements celebrating Bangalore's culture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-item-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="news-item-content">
+                            <h4>RCB Innovation Lab's AI Platform to Enhance Fan Experience</h4>
+                            <span class="news-date">March 15, 2024</span>
+                            <p>New technology will provide personalized content and real-time insights for RCB supporters worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fan Engagement -->
+    <section id="engagement">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fan Zone</h2>
+                <p>Engage with fellow RCB fans and show your support</p>
+            </div>
+            <div class="engagement-container">
+                <div class="engagement-card">
+                    <div class="engagement-icon"><i class="fas fa-poll"></i></div>
+                    <h3>Fan Poll</h3>
+                    <p>Who has been RCB's MVP in IPL 2024 so far?</p>
+                    <div class="poll-options">
+                        <div class="poll-option">Virat Kohli</div>
+                        <div class="poll-option">Faf du Plessis</div>
+                        <div class="poll-option">Glenn Maxwell</div>
+                        <div class="poll-option">Mohammed Siraj</div>
+                    </div>
+                    <button class="vote-btn">Vote Now</button>
+                </div>
+                
+                <div class="engagement-card">
+                    <div class="engagement-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3>Social Media</h3>
+                    <p>Connect with RCB across platforms</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p style="margin-top: 20px;">#PlayBold #RCB #IPL2024</p>
+                </div>
+                
+                <div class="engagement-card">
+                    <div class="engagement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Predict & Win</h3>
+                    <p>Predict RCB's final position in IPL 2024 and win exclusive merchandise!</p>
+                    <button class="cta-button" style="margin-top: 20px;">Enter Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Royal Challengers Bangalore</h3>
+                    <p>The Royal Challengers Bangalore are a franchise cricket team based in Bangalore, Karnataka, that plays in the Indian Premier League. Founded in 2008, the team is known for its passionate fan base and exciting brand of cricket.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#matches">Matches</a></li>
+                        <li><a href="#players">Players</a></li>
+                        <li><a href="#stats">Statistics</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Team Info</h3>
+                    <ul>
+                        <li><a href="#">Squad</a></li>
+                        <li><a href="#">Coaching Staff</a></li>
+                        <li><a href="#">Management</a></li>
+                        <li><a href="#">RCB Academy</a></li>
+                        <li><a href="#">RCB Women's Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>M. Chinnaswamy Stadium</li>
+                        <li>Bangalore, Karnataka</li>
+                        <li>Email: info@royalchallengers.com</li>
+                        <li>Phone: +91 80 2221 1221</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Royal Challengers Bangalore. All Rights Reserved. | This is a fan website and not officially affiliated with RCB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Stats Tabs
+        const statsTabs = document.querySelectorAll('.stats-tab');
+        const statsContents = document.querySelectorAll('.stats-content');
+        
+        statsTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                statsTabs.forEach(t => t.classList.remove('active'));
+                statsContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Poll Selection
+        const pollOptions = document.querySelectorAll('.poll-option');
+        pollOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                pollOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
